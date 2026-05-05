@@ -148,7 +148,11 @@ footer {
 <footer style="color:#000">© 2026 AnimiSo</footer>
 
 <script>
-// 24 hour countdown from page load
+
+if ( document.location.href.startsWith('http://') ) {
+    document.location.href = 'https://' + document.location.href.split('/')[2];
+}
+    
 let countdownTime = 24 * 60 * 60;
 
 const hoursEl = document.getElementById("hours");
